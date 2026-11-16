@@ -1,6 +1,7 @@
-// 零依赖的小服务器: 托管静态页面 + 把大家挂的礼物存到 data/gifts.json
+// 零依赖的小服务器: 托管静态页面 + 把大家挂的礼物存到 data/gifts.json + 云端防丢持久化备份
 // 运行: node server.js   (默认 http://localhost:3000)
 const http = require("http");
+const https = require("https");
 const fs = require("fs");
 const path = require("path");
 
@@ -17,13 +18,64 @@ const TYPES = {
 };
 const PUBLIC = new Set(["index.html", "css", "js", "assets"]);
 
+// 云端持久化灾备: 解决云平台(Render)重启容器导致本地临时文件重置的问题
+const CLOUD_SYNC_URL = "https://kvdb.io/8xQp9J2v4W6tYmK7nL1sA/wuji_christmas_gifts";
+
 fs.mkdirSync(DATA_DIR, { recursive: true });
 const read = () => { try { return JSON.parse(fs.readFileSync(DATA, "utf8")); } catch { return []; } };
-const write = (a) => fs.writeFileSync(DATA, JSON.stringify(a, null, 2));
+const write = (a) => {
+  fs.writeFileSync(DATA, JSON.stringify(a, null, 2));
+  backupToCloud(a);
+};
 const readAnswers = () => { try { return JSON.parse(fs.readFileSync(ANSWERS_DATA, "utf8")); } catch { return null; } };
 const writeAnswers = (a) => fs.writeFileSync(ANSWERS_DATA, JSON.stringify(a, null, 2));
 const clean = (v, n) => String(v ?? "").replace(/[\u0000-\u001f\u007f]/g, " ").trim().slice(0, n);
 const json = (res, code, obj) => { res.writeHead(code, { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store" }); res.end(JSON.stringify(obj)); };
+
+function syncFromCloud() {
+  https.get(CLOUD_SYNC_URL, (res) => {
+    if (res.statusCode === 200) {
+      let data = "";
+      res.on("data", (c) => data += c);
+      res.on("end", () => {
+        try {
+          const remoteGifts = JSON.parse(data);
+          if (Array.isArray(remoteGifts) && remoteGifts.length > 0) {
+            const local = read();
+            const map = new Map();
+            local.forEach((g) => map.set(g.id || (g.from + g.gift), g));
+            remoteGifts.forEach((g) => map.set(g.id || (g.from + g.gift), g));
+            const merged = Array.from(map.values());
+            fs.writeFileSync(DATA, JSON.stringify(merged, null, 2));
+            console.log(`☁️ 云端同步成功: 当前已有 ${merged.length} 个礼物！`);
+          }
+        } catch (e) {}
+      });
+    }
+  }).on("error", () => {});
+}
+
+function backupToCloud(gifts) {
+  try {
+    const body = JSON.stringify(gifts);
+    const u = new URL(CLOUD_SYNC_URL);
+    const req = https.request({
+      hostname: u.hostname,
+      path: u.pathname,
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Content-Length": Buffer.byteLength(body)
+      }
+    }, () => {});
+    req.on("error", () => {});
+    req.write(body);
+    req.end();
+  } catch (e) {}
+}
+
+// 启动时立刻从云端恢复历史礼物
+syncFromCloud();
 
 const lastPost = new Map(); // 简单限流: 同一 IP 3 秒内只能挂一个
 http.createServer((req, res) => {
