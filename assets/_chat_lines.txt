@@ -1,0 +1,228 @@
+瑙勫垝涔岄浮鐨勫湥璇炵綉绔?/title>
+@layer properties,theme,base,components,utilities;
+[data-sonner-toaster][dir=ltr],html[dir=ltr]{--toast-icon-margin-start:-3px;--toast-icon-margin-end:4px;--toast-svg-margin-start:-1px;--toast-svg-margin-end:0px;--toast-button-margin-start:auto;--toast-button-margin-end:0;--toast-close-button-start:0;--toast-close-button-end:unset;--toast-close-button-transform:translate(-35%, -35%)}[data-sonner-toaster][dir=rtl],html[dir=rtl]{--toast-icon-margin-start:4px;--toast-icon-margin-end:-3px;--toast-svg-margin-start:0px;--toast-svg-margin-end:-1px;--toast-button-margin-start:0;--toast-button-margin-end:auto;--toast-close-button-start:unset;--toast-close-button-end:0;--toast-close-button-transform:translate(35%, -35%)}[data-sonner-toaster]{position:fixed;width:var(--width);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;--gray1:hsl(0, 0%, 99%);--gray2:hsl(0, 0%, 97.3%);--gray3:hsl(0, 0%, 95.1%);--gray4:hsl(0, 0%, 93%);--gray5:hsl(0, 0%, 90.9%);--gray6:hsl(0, 0%, 88.7%);--gray7:hsl(0, 0%, 85.8%);--gray8:hsl(0, 0%, 78%);--gray9:hsl(0, 0%, 56.1%);--gray10:hsl(0, 0%, 52.3%);--gray11:hsl(0, 0%, 43.5%);--gray12:hsl(0, 0%, 9%);--border-radius:8px;box-sizing:border-box;padding:0;margin:0;list-style:none;outline:0;z-index:999999999;transition:transform .4s ease}@media (hover:none) and (pointer:coarse){[data-sonner-toaster][data-lifted=true]{transform:none}}[data-sonner-toaster][data-x-position=right]{right:var(--offset-right)}[data-sonner-toaster][data-x-position=left]{left:var(--offset-left)}[data-sonner-toaster][data-x-position=center]{left:50%;transform:translateX(-50%)}[data-sonner-toaster][data-y-position=top]{top:var(--offset-top)}[data-sonner-toaster][data-y-position=bottom]{bottom:var(--offset-bottom)}[data-sonner-toast]{--y:translateY(100%);--lift-amount:calc(var(--lift) * var(--gap));z-index:var(--z-index);position:absolute;opacity:0;transform:var(--y);touch-action:none;transition:transform .4s,opacity .4s,height .4s,box-shadow .2s;box-sizing:border-box;outline:0;overflow-wrap:anywhere}[data-sonner-toast][data-styled=true]{padding:16px;background:var(--normal-bg);border:1px solid var(--normal-border);color:var(--normal-text);border-radius:var(--border-radius);box-shadow:0 4px 12px rgba(0,0,0,.1);width:var(--width);font-size:13px;display:flex;align-items:center;gap:6px}[data-sonner-toast]:focus-visible{box-shadow:0 4px 12px rgba(0,0,0,.1),0 0 0 2px rgba(0,0,0,.2)}[data-sonner-toast][data-y-position=top]{top:0;--y:translateY(-100%);--lift:1;--lift-amount:calc(1 * var(--gap))}[data-sonner-toast][data-y-position=bottom]{bottom:0;--y:translateY(100%);--lift:-1;--lift-amount:calc(var(--lift) * var(--gap))}[data-sonner-toast][data-styled=true] [data-description]{font-weight:400;line-height:1.4;color:#3f3f3f}[data-rich-colors=true][data-sonner-toast][data-styled=true] [data-description]{color:inherit}[data-sonner-toaster][data-sonner-theme=dark] [data-description]{color:#e8e8e8}[data-sonner-toast][data-styled=true] [data-title]{font-weight:500;line-height:1.5;color:inherit}[data-sonner-toast][data-styled=true] [data-icon]{display:flex;height:16px;width:16px;position:relative;justify-content:flex-start;align-items:center;flex-shrink:0;margin-left:var(--toast-icon-margin-start);margin-right:var(--toast-icon-margin-end)}[data-sonner-toast][data-promise=true] [data-icon]>svg{opacity:0;transform:scale(.8);transform-origin:center;animation:sonner-fade-in .3s ease forwards}[data-sonner-toast][data-styled=true] [data-icon]>*{flex-shrink:0}[data-sonner-toast][data-styled=true] [data-icon] svg{margin-left:var(--toast-svg-margin-start);margin-right:var(--toast-svg-margin-end)}[data-sonner-toast][data-styled=true] [data-content]{display:flex;flex-direction:column;gap:2px}[data-sonner-toast][data-styled=true] [data-button]{border-radius:4px;padding-left:8px;padding-right:8px;height:24px;font-size:12px;color:var(--normal-bg);background:var(--normal-text);margin-left:var(--toast-button-margin-start);margin-right:var(--toast-button-margin-end);border:none;font-weight:500;cursor:pointer;outline:0;display:flex;align-items:center;flex-shrink:0;transition:opacity .4s,box-shadow .2s}[data-sonner-toast][data-styled=true] [data-button]:focus-visible{box-shadow:0 0 0 2px rgba(0,0,0,.4)}[data-sonner-toast][data-styled=true] [data-button]:first-of-type{margin-left:var(--toast-button-margin-start);margin-right:var(--toast-button-margin-end)}[data-sonner-toast][data-styled=true] [data-cancel]{color:var(--normal-text);background:rgba(0,0,0,.08)}[data-sonner-toaster][data-sonner-theme=dark] [data-sonner-toast][data-styled=true] [data-cancel]{background:rgba(255,255,255,.3)}[data-sonner-toast][data-styled=true] [data-close-button]{position:absolute;left:var(--toast-close-button-start);right:var(--toast-close-button-end);top:0;height:20px;width:20px;display:flex;justify-content:center;align-items:center;padding:0;color:var(--gray12);background:var(--normal-bg);border:1px solid var(--gray4);transform:var(--toast-close-button-transform);border-radius:50%;cursor:pointer;z-index:1;transition:opacity .1s,background .2s,border-color .2s}[data-sonner-toast][data-styled=true] [data-close-button]:focus-visible{box-shadow:0 4px 12px rgba(0,0,0,.1),0 0 0 2px rgba(0,0,0,.2)}[data-sonner-toast][data-styled=true] [data-disabled=true]{cursor:not-allowed}[data-sonner-toast][data-styled=true]:hover [data-close-button]:hover{background:var(--gray2);border-color:var(--gray5)}[data-sonner-toast][data-swiping=true]::before{content:'';position:absolute;left:-100%;right:-100%;height:100%;z-index:-1}[data-sonner-toast][data-y-position=top][data-swiping=true]::before{bottom:50%;transform:scaleY(3) translateY(50%)}[data-sonner-toast][data-y-position=bottom][data-swiping=true]::before{top:50%;transform:scaleY(3) translateY(-50%)}[data-sonner-toast][data-swiping=false][data-removed=true]::before{content:'';position:absolute;inset:0;transform:scaleY(2)}[data-sonner-toast][data-expanded=true]::after{content:'';position:absolute;left:0;height:calc(var(--gap) + 1px);bottom:100%;width:100%}[data-sonner-toast][data-mounted=true]{--y:translateY(0);opacity:1}[data-sonner-toast][data-expanded=false][data-front=false]{--scale:var(--toasts-before) * 0.05 + 1;--y:translateY(calc(var(--lift-amount) * var(--toasts-before))) scale(calc(-1 * var(--scale)));height:var(--front-toast-height)}[data-sonner-toast]>*{transition:opacity .4s}[data-sonner-toast][data-x-position=right]{right:0}[data-sonner-toast][data-x-position=left]{left:0}[data-sonner-toast][data-expanded=false][data-front=false][data-styled=true]>*{opacity:0}[data-sonner-toast][data-visible=false]{opacity:0;pointer-events:none}[data-sonner-toast][data-mounted=true][data-expanded=true]{--y:translateY(calc(var(--lift) * var(--offset)));height:var(--initial-height)}[data-sonner-toast][data-removed=true][data-front=true][data-swipe-out=false]{--y:translateY(calc(var(--lift) * -100%));opacity:0}[data-sonner-toast][data-removed=true][data-front=false][data-swipe-out=false][data-expanded=true]{--y:translateY(calc(var(--lift) * var(--offset) + var(--lift) * -100%));opacity:0}[data-sonner-toast][data-removed=true][data-front=false][data-swipe-out=false][data-expanded=false]{--y:translateY(40%);opacity:0;transition:transform .5s,opacity .2s}[data-sonner-toast][data-removed=true][data-front=false]::before{height:calc(var(--initial-height) + 20%)}[data-sonner-toast][data-swiping=true]{transform:var(--y) translateY(var(--swipe-amount-y,0)) translateX(var(--swipe-amount-x,0));transition:none}[data-sonner-toast][data-swiped=true]{user-select:none}[data-sonner-toast][data-swipe-out=true][data-y-position=bottom],[data-sonner-toast][data-swipe-out=true][data-y-position=top]{animation-duration:.2s;animation-timing-function:ease-out;animation-fill-mode:forwards}[data-sonner-toast][data-swipe-out=true][data-swipe-direction=left]{animation-name:swipe-out-left}[data-sonner-toast][data-swipe-out=true][data-swipe-direction=right]{animation-name:swipe-out-right}[data-sonner-toast][data-swipe-out=true][data-swipe-direction=up]{animation-name:swipe-out-up}[data-sonner-toast][data-swipe-out=true][data-swipe-direction=down]{animation-name:swipe-out-down}@keyframes swipe-out-left{from{transform:var(--y) translateX(var(--swipe-amount-x));opacity:1}to{transform:var(--y) translateX(calc(var(--swipe-amount-x) - 100%));opacity:0}}@keyframes swipe-out-right{from{transform:var(--y) translateX(var(--swipe-amount-x));opacity:1}to{transform:var(--y) translateX(calc(var(--swipe-amount-x) + 100%));opacity:0}}@keyframes swipe-out-up{from{transform:var(--y) translateY(var(--swipe-amount-y));opacity:1}to{transform:var(--y) translateY(calc(var(--swipe-amount-y) - 100%));opacity:0}}@keyframes swipe-out-down{from{transform:var(--y) translateY(var(--swipe-amount-y));opacity:1}to{transform:var(--y) translateY(calc(var(--swipe-amount-y) + 100%));opacity:0}}@media (max-width:600px){[data-sonner-toaster]{position:fixed;right:var(--mobile-offset-right);left:var(--mobile-offset-left);width:100%}[data-sonner-toaster][dir=rtl]{left:calc(var(--mobile-offset-left) * -1)}[data-sonner-toaster] [data-sonner-toast]{left:0;right:0;width:calc(100% - var(--mobile-offset-left) * 2)}[data-sonner-toaster][data-x-position=left]{left:var(--mobile-offset-left)}[data-sonner-toaster][data-y-position=bottom]{bottom:var(--mobile-offset-bottom)}[data-sonner-toaster][data-y-position=top]{top:var(--mobile-offset-top)}[data-sonner-toaster][data-x-position=center]{left:var(--mobile-offset-left);right:var(--mobile-offset-right);transform:none}}[data-sonner-toaster][data-sonner-theme=light]{--normal-bg:#fff;--normal-border:var(--gray4);--normal-text:var(--gray12);--success-bg:hsl(143, 85%, 96%);--success-border:hsl(145, 92%, 87%);--success-text:hsl(140, 100%, 27%);--info-bg:hsl(208, 100%, 97%);--info-border:hsl(221, 91%, 93%);--info-text:hsl(210, 92%, 45%);--warning-bg:hsl(49, 100%, 97%);--warning-border:hsl(49, 91%, 84%);--warning-text:hsl(31, 92%, 45%);--error-bg:hsl(359, 100%, 97%);--error-border:hsl(359, 100%, 94%);--error-text:hsl(360, 100%, 45%)}[data-sonner-toaster][data-sonner-theme=light] [data-sonner-toast][data-invert=true]{--normal-bg:#000;--normal-border:hsl(0, 0%, 20%);--normal-text:var(--gray1)}[data-sonner-toaster][data-sonner-theme=dark] [data-sonner-toast][data-invert=true]{--normal-bg:#fff;--normal-border:var(--gray3);--normal-text:var(--gray12)}[data-sonner-toaster][data-sonner-theme=dark]{--normal-bg:#000;--normal-bg-hover:hsl(0, 0%, 12%);--normal-border:hsl(0, 0%, 20%);--normal-border-hover:hsl(0, 0%, 25%);--normal-text:var(--gray1);--success-bg:hsl(150, 100%, 6%);--success-border:hsl(147, 100%, 12%);--success-text:hsl(150, 86%, 65%);--info-bg:hsl(215, 100%, 6%);--info-border:hsl(223, 43%, 17%);--info-text:hsl(216, 87%, 65%);--warning-bg:hsl(64, 100%, 6%);--warning-border:hsl(60, 100%, 9%);--warning-text:hsl(46, 87%, 65%);--error-bg:hsl(358, 76%, 10%);--error-border:hsl(357, 89%, 16%);--error-text:hsl(358, 100%, 81%)}[data-sonner-toaster][data-sonner-theme=dark] [data-sonner-toast] [data-close-button]{background:var(--normal-bg);border-color:var(--normal-border);color:var(--normal-text)}[data-sonner-toaster][data-sonner-theme=dark] [data-sonner-toast] [data-close-button]:hover{background:var(--normal-bg-hover);border-color:var(--normal-border-hover)}[data-rich-colors=true][data-sonner-toast][data-type=success]{background:var(--success-bg);border-color:var(--success-border);color:var(--success-text)}[data-rich-colors=true][data-sonner-toast][data-type=success] [data-close-button]{background:var(--success-bg);border-color:var(--success-border);color:var(--success-text)}[data-rich-colors=true][data-sonner-toast][data-type=info]{background:var(--info-bg);border-color:var(--info-border);color:var(--info-text)}[data-rich-colors=true][data-sonner-toast][data-type=info] [data-close-button]{background:var(--info-bg);border-color:var(--info-border);color:var(--info-text)}[data-rich-colors=true][data-sonner-toast][data-type=warning]{background:var(--warning-bg);border-color:var(--warning-border);color:var(--warning-text)}[data-rich-colors=true][data-sonner-toast][data-type=warning] [data-close-button]{background:var(--warning-bg);border-color:var(--warning-border);color:var(--warning-text)}[data-rich-colors=true][data-sonner-toast][data-type=error]{background:var(--error-bg);border-color:var(--error-border);color:var(--error-text)}[data-rich-colors=true][data-sonner-toast][data-type=error] [data-close-button]{background:var(--error-bg);border-color:var(--error-border);color:var(--error-text)}.sonner-loading-wrapper{--size:16px;height:var(--size);width:var(--size);position:absolute;inset:0;z-index:10}.sonner-loading-wrapper[data-visible=false]{transform-origin:center;animation:sonner-fade-out .2s ease forwards}.sonner-spinner{position:relative;top:50%;left:50%;height:var(--size);width:var(--size)}.sonner-loading-bar{animation:sonner-spin 1.2s linear infinite;background:var(--gray11);border-radius:6px;height:8%;left:-10%;position:absolute;top:-3.9%;width:24%}.sonner-loading-bar:first-child{animation-delay:-1.2s;transform:rotate(.0001deg) translate(146%)}.sonner-loading-bar:nth-child(2){animation-delay:-1.1s;transform:rotate(30deg) translate(146%)}.sonner-loading-bar:nth-child(3){animation-delay:-1s;transform:rotate(60deg) translate(146%)}.sonner-loading-bar:nth-child(4){animation-delay:-.9s;transform:rotate(90deg) translate(146%)}.sonner-loading-bar:nth-child(5){animation-delay:-.8s;transform:rotate(120deg) translate(146%)}.sonner-loading-bar:nth-child(6){animation-delay:-.7s;transform:rotate(150deg) translate(146%)}.sonner-loading-bar:nth-child(7){animation-delay:-.6s;transform:rotate(180deg) translate(146%)}.sonner-loading-bar:nth-child(8){animation-delay:-.5s;transform:rotate(210deg) translate(146%)}.sonner-loading-bar:nth-child(9){animation-delay:-.4s;transform:rotate(240deg) translate(146%)}.sonner-loading-bar:nth-child(10){animation-delay:-.3s;transform:rotate(270deg) translate(146%)}.sonner-loading-bar:nth-child(11){animation-delay:-.2s;transform:rotate(300deg) translate(146%)}.sonner-loading-bar:nth-child(12){animation-delay:-.1s;transform:rotate(330deg) translate(146%)}@keyframes sonner-fade-in{0%{opacity:0;transform:scale(.8)}100%{opacity:1;transform:scale(1)}}@keyframes sonner-fade-out{0%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(.8)}}@keyframes sonner-spin{0%{opacity:1}100%{opacity:.15}}@media (prefers-reduced-motion){.sonner-loading-bar,[data-sonner-toast],[data-sonner-toast]>*{transition:none!important;animation:none!important}}.sonner-loader{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);transform-origin:center;transition:opacity .2s,transform .2s}.sonner-loader[data-visible=false]{opacity:0;transform:scale(.8) translate(-50%,-50%)}
+ChatGPT
+瑙勫垝涔岄浮鐨勫湥璇炵綉绔?/h1>
+Continue in ChatGPT
+鎴戠幇鍦ㄦ兂瑕佹渶涓€涓皬缃戠珯鏄负鎴戞湅鍙嬪仛鐨勫彨锛氫箤楦＄殑鍦ｈ癁 灏卞儚杩欎釜缃戠珯涓€鏍凤細
+https://cloudz.fun/gift/cn/visit?id=CY1lPlK
+瑕佸洖绛?0閬撳叧浜庢垜鏈嬪弸鐨勯棶棰橈紝鐒跺悗鍙互鎶婃兂瑕侀€佺粰涔岄浮鐨勭ぜ鐗╂寕鍦ㄥ湥璇炴爲涓娿€傛垜浠竴姝ヤ竴姝ュ幓鍋氳繖涓綉绔欙紝鎴戜滑鍋氬崱閫氭极鐢婚鏍?D鐨勭綉绔欒鎬庝箞寮€濮?/p>
+Worked for 32s
+鎴戜滑鍏堜粠**鈥滀箤楦＄殑鍦ｈ癁鈥濋椤靛満鏅?*寮€濮嬶紝鎶婄敾椋庣‘瀹氫笅鏉ワ紝鍐嶉€愭鍔犲叆绛旈鍜屾寕绀肩墿鐨勫姛鑳姐€?/p>
+鍙傝€冮摼鎺ユ殏鏃舵病鑳借鍙栵紝鎵€浠ユ垜鍏堟牴鎹綘鎻忚堪鐨勭帺娉曟潵璁捐銆?/p>
+鎴戝缓璁仛鎴愪竴涓?
+3D 鍗￠€氬湥璇炲皬涓栫晫
+锛氬渾娑︾殑鐜╁叿璐ㄦ劅銆佹极鐢绘弿杈广€佹殩榛勮壊鐏厜锛屾惌閰嶅ザ娌圭櫧鐨勯洩鍦般€佸湥璇炵豢鍜岃帗鏋滅孩銆傛墦寮€缃戠珯锛屽氨鍍忚繘鍏ヤ笓闂ㄤ负涔岄浮鍑嗗鐨勫湥璇炲涵闄€?/p>
+鏁翠釜浣撻獙鍙互杩欐牱瀹夋帓锛?/p>
+杩涘叆搴櫌
+锛氫腑闂存槸涓€妫靛湥璇炴爲锛屼箤楦″湪鏍戞梺杩庢帴鏈嬪弸銆傛爣棰樺啓鐫€銆屼箤楦＄殑鍦ｈ癁銆嶏紝鎸夐挳鏄€岀湅鐪嬩綘鏈夊浜嗚В涔岄浮銆嶃€?/li>
+鍥炵瓟 10 閬撻
+锛氫竴娆″嚭鐜颁竴閬撳叧浜庝箤楦＄殑闂锛岀瓟棰樻椂閫愭笎鐐逛寒鏍戜笂鐨勭伅銆?/li>
+鍑嗗绀肩墿
+锛氱瓟瀹屽悗锛屽～鍐欐樀绉般€佹兂閫佺殑绀肩墿鍜屼竴鍙ョ绂忥紝閫夋嫨绀肩洅澶栬銆?/li>
+鎸備笂鍦ｈ癁鏍?/strong>锛氱偣鍑绘爲涓婄殑浣嶇疆鎸傜ぜ鐗╋紝鎾斁灏忓姩鐢伙紱鐐瑰嚮宸叉寕鐨勭ぜ鐗╋紝鍙互鏌ョ湅鐣欒█銆?/li>
+绗竴鐗堝彲浠ュ厛鍋?strong class="font-semibold">棣栭〉鍦烘櫙鍜岃繘鍏ョ瓟棰樼殑浜掑姩
+銆傜瓑瑙嗚婊℃剰锛屽啀鍔犲叆瀹屾暣棰樺簱锛涙渶鍚庢帴涓婃暟鎹繚瀛橈紝璁╀笉鍚屾湅鍙嬫寕鐨勭ぜ鐗╅兘鑳藉嚭鐜板湪鍚屼竴妫垫爲涓娿€?/p>
+鐜板湪鍏堢‘瀹氫富瑙掞細浣犲笇鏈涒€滀箤楦♀€濇槸涓€鍙埓鍦ｈ癁甯界殑鍙埍灏忛粦楦★紝杩樻槸浣犳湅鍙嬫湰浜虹殑鍗￠€氬舰璞★紵
+濡傛灉鏄湰浜猴紝鍙互鍙戜竴寮犲弬鑰冪収鐗囥€?0 閬撻鎴戜滑涓嬩竴姝ヤ竴璧锋暣鐞嗐€?/p>
+杩欐槸鎴戞湅鍙嬩箤楦℃槸鎴戜滑鐨勭埍绉颁笉涓€瀹氳鏄ス鐪熷疄鐨勮劯鑴革紝鍙互鏄竴涓彲鐖辩殑涔岄浮褰㈣薄鑰屼笖瑕佹湁甯冧竵鐙楀厓绱犲洜涓烘垜鏈嬪弸宸ㄥ枩娆㈠竷涓佺嫍銆傛垜浠厛鍋氬崱閫氬舰璞＄劧鍚庝竴鑸仛缃戦〉閮芥槸鐢ㄤ粈涔堝晩Figma鍙互鍚楀洜涓烘垜韬竟鏈夊緢澶氬悓瀛︾敤杩欎釜鍋氥€傞偅浣犳湁娌℃湁鎺ㄨ崘鐨剆iklls杩炴帴浣犵殑鎴栬€匞itHub涓婇潰浣犲府鍔╁仛缃戦〉鐨勪笢瑗垮緢濂界敤鐨勮鎺ㄨ崘缁欐垜
+Worked for 3m 5s
+鍙互鐢?Figma锛岃€屼笖寰堥€傚悎浣犳兂涓€姝ヤ竴姝ュ弬涓庤璁＄殑鏂瑰紡銆?/strong> 鎴戝缓璁蛋杩欐潯璺嚎锛氳鑹茶璁?鈫?Figma 椤甸潰鍘熷瀷 鈫?缂栧啓浜掑姩鍔熻兘 鈫?涓婄嚎鍒嗕韩銆?/p>
+瑙掕壊绗竴绋垮凡缁忓仛濂戒簡锛?strong class="font-semibold">姣涜尭鑼哥殑灏忛粦楦★紝鎴寸潃鐓х墖閲岀殑妫曡壊甯藉瓙锛岀┛鏆栬壊瑁欒锛屾姳鐫€甯冧竵鐙?/strong>锛屽洿宸句笂涔熸湁甯冧竵鐙楁寕浠躲€傝繖鏍锋棦鏈夋湅鍙嬬殑涓汉鐗圭偣锛屼篃鑳芥垚涓虹綉绔欒嚜宸辩殑鍚夌ゥ鐗┿€?/p>
+杩欐槸鏈?3D 璐ㄦ劅鐨勬蹇靛浘锛涘鏋滃悗闈㈠笇鏈涘畠鑳借浆韬€佹尌鎵嬶紝闇€瑕佸彟澶栧埗浣滃姩鐢绘垨妯″瀷銆?span class="_Mention_n4zca_2" data-appearance="inline-mention" data-font-weight="medium" data-layout="inline-flow" data-tone="accent">
+淇濆瓨瑙掕壊绗竴绋?/span>
+Figma 鍦ㄨ繖涓」鐩噷鍋氫粈涔堬紵
+鍙互鍏堝湪閲岄潰璁捐棣栭〉銆佺瓟棰樺崱鐗囥€佺ぜ鐗╁脊绐楋紝骞跺仛鍑衡€滅偣涓€涓嬭繘鍏ヤ笅涓€椤碘€濈殑鍘熷瀷銆侳igma 鐜板湪涔熸湁鑳藉彂甯冪綉绔欑殑 Figma Sites锛涗笉杩囨垜浠繖绉嶅寘鍚瓟棰樿鍒欍€佺珛浣撳湥璇炴爲鍜屽浜虹暀瑷€淇濆瓨鐨勪綋楠岋紝鎴戞洿寤鸿鍦ㄧ‘璁よ璁″悗閫氳繃浠ｇ爜瀹炵幇銆?a href="https://www.figma.com/sites/" target="_blank" rel="noopener noreferrer">
+Figma Sites 瀹樻柟浠嬬粛
+浣犻棶鐨?Skills銆佽繛鎺ュ伐鍏峰拰 GitHub 椤圭洰锛屽彲浠ヨ繖鏍烽€夛細
+鎺ㄨ崘
+绫诲瀷
+瀵规垜浠湁浠€涔堢敤
+Figma 鎻掍欢
+杩炴帴璁捐宸ュ叿
+鍦ㄨ璁＄鍜岀綉椤靛疄鐜颁箣闂村崗浣滐紝鏂逛究浣犱翰鑷皟鏁村竷灞€
+ImageGen
+宸叉湁 Skill
+鐢熸垚涔岄浮銆佸湥璇炲満鏅拰绀肩洅绱犳潗锛岃繖娆¤鑹插氨鏄敤瀹冨仛鐨?/td>
+Sites
+宸叉湁 Skill 鍜屽伐鍏?/td>
+寮€鍙戙€侀瑙堝拰鍙戝竷缃戠珯锛屽悗缁姞鍏ョぜ鐗╂暟鎹繚瀛?/td>
+frontend-design
+GitHub 涓婄殑 Skill
+鎻愪緵鎺掔増銆侀厤鑹插拰鐣岄潰璁捐鎸囧锛屽彲浣滀负棰濆鍙傝€?/td>
+Three.js
+/
+React Three Fiber
+缃戦〉浠ｇ爜搴?/td>
+鍒朵綔鐪熸鑳芥棆杞€佺偣鍑诲拰鎸傜ぜ鐗╃殑 3D 鍦ｈ癁鏍戯紱鍚庤€呮柟渚垮湪 React 涓娇鐢?/td>
+Skill 鏄粰鍔╂墜鐨勫伐浣滄寚鍗楋紝鎻掍欢杩炴帴澶栭儴宸ュ叿锛屼唬鐮佸簱鍒欐瀯鎴愮綉绔欐湰韬€?/strong> 涓嶉渶瑕佹妸杩欎簺鍏ㄩ儴瑁呬笂鎵嶈兘寮€濮嬨€?/p>
+閽堝浣犺繖涓」鐩紝鎴戝缓璁厛鐢?
+Figma锛嬬幇鏈夌殑 ImageGen銆丼ites
+銆傜瓑瑙掕壊鍜岄椤电‘瀹氾紝鍐嶅姞鍏?3D 鎶€鏈€傜涓€鐗堝彲浠ラ噰鐢ㄢ€滅珛浣撳湥璇炴爲锛嬩箤楦℃彃鐢烩€濈殑缁勫悎锛岃瑙掕壊淇濇寔鐜板湪鐨勭粏鑵昏川鎰熴€?/p>
+涓嬩竴姝ュ厛瀹氳鑹诧細
+杩欎竴鐗堟瘺缁掔帺鍋舵劅绗﹀悎浣犵殑鎯虫硶鍚楋紝杩樻槸浣犳洿鎯宠鍏夋粦鍦嗘鼎銆佸儚榛忓湡鍏粩鐨勫皬涔岄浮锛?/strong>
+Figma 宸茶繛鎺ワ紝鎺ヤ笅鏉ュ彲浠ョ洿鎺ュ湪閲岄潰鍒朵綔鍜屼慨鏀归〉闈㈣璁＄銆?/p>
+鎴戜滑鍏堢‘瀹氫箤楦″舰璞★紝鍐嶅仛棣栭〉锛?strong class="font-semibold">鍦ｈ癁鏍戞斁鍦ㄤ腑澶紝灏忎箤楦℃姳鐫€甯冧竵鐙楃珯鍦ㄦ梺杈癸紝涓嬫柟鏄€屽紑濮嬬瓟棰樸€嶆寜閽€?/strong>
+浣犺寰楀垰鎵嶉偅鐗堝舰璞″悎閫傚悧锛熷彲浠ョ户缁瘺缁掔帺鍋堕锛屼篃鍙互鏀规垚鏇村渾娑︾殑榛忓湡鍏粩椋庛€?/p>
+绠椾簡鎴戜滑鍋?D鍚х綉椤垫湰鏉ュ氨鏄?D鐨勫洜涓轰綘杩欎釜鐢熸垚鐨勫お浜屼簡澶笐浜嗕竴鐐瑰缇庨兘娌℃湁
+鍒氭墠閭ｇ増纭疄澶儚鍫嗘弧閰嶉グ鐨勬瘺缁掔帺鍋讹紝缂哄皯绠€娲併€佹湁涓€х殑璁捐銆傛垜浠敼鎴?
+2D 骞抽潰鎻掔敾椋?/strong>锛岃鑹插拰椤甸潰閮介噸鏂拌璁°€?/p>
+鎴戝缓璁繖娆¤繖鏍锋敹鏁涳細
+涔岄浮
+锛氬渾鍦嗙殑灏忛粦楦★紝璞嗚眴鐪笺€佸皬榛勫槾锛屽彧淇濈暀涓€椤舵鑹插附瀛愶紝鍘绘帀瑁欏瓙銆佸洿宸惧拰鎸備欢銆?/li>
+甯冧竵鐙楀厓绱?/strong>锛氫綔涓哄畠鎶辩潃鐨勫皬鐜╁伓鍑虹幇锛屽ザ娌归粍涔熺敤浣滅綉椤电偣缂€鑹层€?/li>
+鐢绘硶
+锛氱畝娲佺嚎鏉°€佸钩娑傞鑹诧紝涓嶅姞姣涚粧绾圭悊銆佺珛浣撳厜褰卞拰鍘氶噸闃村奖銆?/li>
+椤甸潰
+锛氬儚涓€寮犲彲浠ヤ簰鍔ㄧ殑鍦ｈ癁璐哄崱锛岀敤鎵嬬粯鍦ｈ癁鏍戙€佺ぜ鐗╄创绾稿拰灏戦噺椋橀洩鏉ヨ惀閫犳皵姘涖€?/li>
+鍏堝崟鐙敾濂戒竴鍙皬涔岄浮锛岀‘璁ゅソ鐪嬩簡锛屽啀寰€缃戦〉閲屾斁銆?strong class="font-semibold">浣犳湁娌℃湁鍠滄鐨勬彃鐢汇€佽创绾告垨缃戦〉鎴浘锛熷彂涓€涓ゅ紶灏辫锛屾瘮缁х画鐢ㄢ€滃彲鐖扁€濃€滃崱閫氣€濊繖浜涘娉涜瘝鏇村鏄撳鍑嗕綘鐨勫缇庛€?/strong>
+杩欐槸涔岄浮鐢荤殑鐚尓锛岀尓鐚篃鏄垜浠湅鍙嬩笉鐒朵綘鐢ㄨ繖涓鏍兼悶涓€涓箤楦＄殑褰㈣薄锛?/p>
+Worked for 55s
+鎸夌尓鐚殑鐢婚鍋氫簡杩欎竴鐗堬細
+铚＄瑪杈圭紭銆佹墎鎵佺殑澶ц剳琚嬨€佸皬灏忚韩浣擄紝鎶辩潃甯冧竵鐙?/strong>锛屽厛鎶婁箤楦℃湰韬殑褰㈣薄瀹氫笅鏉ャ€?/p>
+鐢?ImageGen 鐢熸垚锛屼富瑕佹彁绀烘槸鈥滃弬鑰冪尓鐚殑鎵嬬粯姣斾緥鍜岀嚎鏉★紝骞虫秱銆佸憜钀屻€佸皯瑁呴グ鈥濄€?/p>
+涓嬭浇涔岄浮褰㈣薄
+杩欎竴鐗堟帴杩戜綘鎯宠鐨勬劅瑙変簡鍚楋紵
+鎴戣寰楀彲浠ョ劧鍚庣┛绉嬪ぉ鐨勮。鏈?/p>
+Worked for 2m 10s
+Viewed an image
+鎹㈠ソ绉嬭浜嗭細
+濂舵补鑹查拡缁囪～锛嬫牀妫曡壊鑳屽甫瑁?/strong>锛岀户缁姳鐫€甯冧竵鐙椼€?/p>
+鐢?ImageGen 缂栬緫锛屾彁绀洪噸鐐规槸鈥滃彧鏀圭瑁咃紝淇濈暀鍘熸潵鐨勬瘮渚嬨€佽〃鎯呭拰铚＄瑪绾挎潯鈥濄€?/p>
+涓嬭浇绉嬭涔岄浮
+涓嶈绌胯繖涔堝锛屼綘涓嶈寰楁湁鐐归ケ婊′簡鍚椼€傚甫涓€涓湥璇炲附鍜屽洿宸惧惂瑕佸湥璇炵殑鎰熻
+Worked for 54s
+Viewed an image
+鏀瑰ソ浜嗭紝鍙埓
+灏忓湥璇炲附锛嬬粏绾㈠洿宸?/strong>锛岄湶鍑哄師鏉ョ殑灏忚韩浣擄紝缁х画鎶辩潃甯冧竵鐙椼€?/p>
+涓嬭浇鍦ｈ癁鐗堜箤楦?/span>
+鐢?ImageGen 缂栬緫锛屾彁绀洪噸鐐癸細鍘绘帀绉嬭锛屼繚鐣欏師鐢婚锛屽彧鍔犺交宸х殑鍦ｈ癁閰嶉グ銆?/p>
+甯藉瓙澶х偣锛屽洿宸惧ぇ鐐硅€岃娓呯埥涓嶆槸瑕佸皬
+Worked for 59s
+Viewed an image
+甯藉瓙鍜屽洿宸鹃兘鏀惧ぇ浜嗭紝淇濈暀绾壊鍜岀畝鍗曠嚎鏉★紝鍦ｈ癁鎰熸洿鏄庢樉銆?/p>
+涓嬭浇鏂扮増涔岄浮
+浣跨敤 ImageGen 缂栬緫锛涙彁绀洪噸鐐癸細鏀惧ぇ閰嶉グ锛屼繚鎸佺畝娲併€?/p>
+灏辫繖涓惂涓嬩竴姝ユ垜浠骞蹭粈涔?/p>
+瑙掕壊灏卞畾杩欎竴鐗堛€?strong class="font-semibold">涓嬩竴姝ュ仛棣栭〉璁捐绋?/strong>锛屽厛鎶婄綉绔欐暣浣撶殑鎰熻纭畾涓嬫潵銆?/p>
+棣栭〉娌跨敤涔岄浮鐨勮湣绗旀墜缁橀锛?/p>
+鑳屾櫙
+锛氬ザ娌圭櫧绾稿紶搴曡壊锛屽皯閲忛洩鑺便€?/li>
+鏍囬
+锛氥€屼箤楦＄殑鍦ｈ癁銆嶏紝鐢ㄨ嚜鐒剁殑鎵嬪啓瀛椼€?/li>
+涓荤敾闈?/strong>锛氫竴妫垫墜缁樺湥璇炴爲锛屼箤楦℃姳鐫€甯冧竵鐙楃珯鍦ㄦ梺杈癸紝鏍戜笂棰勭暀鎸傜ぜ鐗╃殑浣嶇疆銆?/li>
+鍏ュ彛
+锛氥€屼綘鏈夊浜嗚В涔岄浮锛熴€嶄笅闈㈡斁銆屽紑濮嬬瓟棰樸€嶆寜閽€?/li>
+灏忓瓧
+锛氥€屽洖绛?10 閬撳皬闂锛屾妸浣犵殑绀肩墿鎸備笂鏉ュ惂銆傘€?/li>
+鎴戜滑鍏堝湪
+Figma 鍋氫竴寮犳墜鏈洪椤电
+锛屾柟渚夸箣鍚庡彂缁欐湅鍙嬬敤鎵嬫満鎵撳紑銆傞椤垫弧鎰忓悗锛屽啀鍋氱瓟棰樺拰鎸傜ぜ鐗╃殑椤甸潰銆?/p>
+浣犲彲浠ュ悓鏃舵參鎱㈡兂閭?10 閬撻锛屾瘮濡備箤楦℃渶鍠滄鐨勯鐗┿€佸彛澶寸銆佷綘浠箣闂寸殑姊楋紱鏆傛椂涓嶇敤鏁寸悊瀹岋紝涓嶅奖鍝嶅厛鍋氶椤点€?/p>
+浣犳牴鎹垜鍒氬垰缁欎綘鍙戠殑閭ｄ釜缃戠珯鍘诲弬鑰?/p>
+Worked for 1m 19s
+鎴戞墦寮€鐪嬪埌浜嗭紝涔嬪墠娌¤鍒伴〉闈㈡椂缁欑殑鏂规澶硾浜嗐€?strong class="font-semibold">鎴戜滑灏辨寜杩欎釜鍙傝€冪珯鐨勬父鎴忕粨鏋勬潵鍋氾紝瑙嗚鎹㈡垚浣犻€夊ソ鐨勪箤楦℃墜缁橀銆?/strong>
+鍙傝€冪珯鏈夊嚑涓€煎緱淇濈暀鐨勮璁★細
+棣栭〉鏄個璇峰崱
+锛氬睍绀轰箤楦°€佺ぜ鐗╂暟閲忥紝濉啓閫佺ぜ浜虹殑鍚嶅瓧鍚庡紑濮嬨€?/li>
+绛旈鍍忛€涘湥璇為泦甯?/strong>锛氫笂鍗婂睆鏄鑹插拰鍦烘櫙锛屼笅鍗婂睆鏄剧ず闂涓庨€夐」锛岄《閮ㄨ褰?10 棰樿繘搴︺€?/li>
+绛斿浼氬崌绾хぜ鐗╁寘瑁?/strong>锛氫粠鐗涚毊绾哥ぜ鐩掑紑濮嬶紝璁╃瓟棰樿繃绋嬫湁鍙樺寲銆?/li>
+鎴戜滑鐨勭増鏈噰鐢ㄨ繖涓祦绋嬶細
+濉啓鏄电О 鈫?鍥炵瓟 10 棰?鈫?鍐欑ぜ鐗╁拰绁濈 鈫?鎸備笂鍦ｈ癁鏍?/strong>銆傛渶鍚庢寕鏍戞槸鎸変綘鎯宠鐨勭帺娉曞姞鍏ョ殑銆?/p>
+涓嬩竴姝ュ厛鍋?strong class="font-semibold">棣栭〉鍜岀涓€棰樹袱寮犺璁＄
+锛氭部鐢ㄥ弬鑰冪珯鐨勬墜鏈虹珫灞忓竷灞€锛屾妸鐚挭鎹㈡垚鍦ｈ癁涔岄浮锛屾妸鑳屾櫙銆佸崱鐗囧拰绀肩洅缁熶竴鎴愯湣绗旀墜缁橀銆傝繖鏍峰彲浠ュ悓鏃剁‘璁ら〉闈㈠ソ涓嶅ソ鐪嬨€佺瓟棰樹綋楠岄『涓嶉『銆?/p>
+浣犵敓鍥惧惂鎴戞棤娉?/p>
+Worked for 1m 44s
+Viewed an image
+鏁堟灉鍥惧嚭鏉ヤ簡锛?strong class="font-semibold">宸﹁竟鏄椤碉紝鍙宠竟鏄瓟棰橀〉
+銆傚弬鑰冧簡鍘熺綉绔欑殑閭€璇峰崱鍜屽湥璇為泦甯傚竷灞€锛屾崲鎴愪箤楦＄殑铚＄瑪鎵嬬粯椋庛€?/p>
+杩欐槸璁捐姒傚康鍥撅紝棰樼洰鍜岀ぜ鐗╂暟閲忔殏涓虹ず渚嬶紝杩樹笉鑳界偣鍑汇€?/p>
+涓嬭浇鏁堟灉鍥?/span>
+浣跨敤 ImageGen 鐢熸垚锛涙彁绀洪噸鐐癸細鎵嬫満绔栧睆銆佸湥璇為個璇峰崱銆佹墜缁橀泦甯傘€佺粺涓€涔岄浮褰㈣薄銆?/p>
+娌℃瘺鐥呭晩鑰侀搧杩欎釜椋庢牸鏄鐨勶紝浣嗘槸鎴戝笇鏈涜繖涓箤楦″彲浠ョ伒鍔ㄤ竴鐐癸紝鎴戜滑璁捐鍑犱釜鍔ㄤ綔缁欏ス鍚?/p>
+Worked for 1m 44s
+鍏釜鍔ㄤ綔鍋氬ソ浜嗭紒浠庡乏鍒板彸銆佷粠涓婂埌涓嬶細
+鎸ユ墜娆㈣繋
+锛氳繘鍏ラ椤垫椂杩庢帴鏈嬪弸銆?/li>
+姝ご鎬濊€?/strong>锛氱瓑寰呬綘閫夋嫨绛旀銆?/li>
+寮€蹇冭功璧?/strong>锛氱瓟瀵逛簡锛岀ぜ鐗╁崌绾э紒
+濮斿眻鎶辨姳
+锛氱瓟閿欎簡锛屾姳绱у竷涓佺嫍銆?/li>
+鎶辩潃绀肩墿
+锛氬噯澶囧ソ绀肩墿鍜岀绂忋€?/li>
+韪剼鎸傜ぜ鐗?/strong>锛氭妸蹇冩剰鎸傚埌鏍戜笂銆?/li>
+杩欐槸鍔ㄤ綔璁惧畾鍥撅紱鍋氳繘缃戦〉鏃讹紝鍙互閰嶄笂杞昏交鎽囨憜銆佽功璺冲拰鍥村肪鏅冨姩銆?/p>
+涓嬭浇鍏姩浣滆瀹氬浘
+鐢?ImageGen 鐢熸垚锛屾彁绀洪噸鐐规槸淇濇寔瑙掕壊涓€鑷达紝閫氳繃濮垮娍鍜岃〃鎯呭鍔犵伒鍔ㄦ劅銆?/p>
+濂藉儚閭ｅ崄閬撻娌℃湁瀵归敊鎴戜篃涓嶆竻妤氫竴浼氫綘鐪嬬湅鐒跺悗杩欎釜涓嬮潰鐨勫叚涓畬鍏ㄦ病姣涚梾鑰侀搧灏辨寜杩欎釜鏉?/p>
+Worked for 1m 27s
+鍏釜鍔ㄤ綔灏辨寜杩欑増瀹氫簡锛岃€侀搧銆?/p>
+鎴戝垰瀹為檯閫変簡涓€棰橈細鍙傝€冪珯
+纭疄浼氬垽瀵归敊
+锛岄€夊畬鍑虹幇浜嗏€溾€︹€﹀浜嗐€傜湡鐑︺€傗€濈殑鍙嶉锛岄《閮ㄤ篃浜捣涓€鏍笺€備笉杩囪繖浜涙槸鍋忓ソ棰橈紝鈥滃鈥濇寚鐨勬槸绗﹀悎涔岄浮鐨勯€夋嫨銆?/p>
+鎴戜滑鑷繁鐨勮鍒欏彲浠ュ啀瀹氾紝鍏釜鍔ㄤ綔閮借兘淇濈暀銆傚灞堟姳鎶变篃鍙互鐢ㄥ湪鈥滅瓑浣犲ソ涔呬簡鈥濓紝涓嶅繀缁戝畾绛旈敊銆?/p>
+涓嬩竴姝ュ仛
+鍦ｈ癁鏍戝拰鎸傜ぜ鐗╅〉闈㈢殑鏁堟灉鍥?/strong>锛屾妸鏁翠釜浣撻獙琛ラ綈銆?/p>
+OK鎼炶捣
+Worked for 1m 45s
+鎼炲畾锛?strong class="font-semibold">宸﹁竟鏄ぇ瀹跺叡鍚岀殑鍦ｈ癁鏍戯紝鍙宠竟鏄啓绀肩墿鍜岀绂忕殑椤甸潰
+锛岃府鑴氭寕绀肩墿鐨勪箤楦′篃鐢ㄤ笂浜嗐€?/p>
+杩欒繕鏄潤鎬佹晥鏋滃浘锛屾樀绉般€佺绂忓拰鏁伴噺閮芥槸绀轰緥銆備笅涓€姝ュ彲浠ユ妸宸茬‘瀹氱殑椤甸潰鍋氭垚鑳界偣鍑荤殑缃戦〉鍘熷瀷銆?/p>
+涓嬭浇鏁堟灉鍥?/span>
+鐢?ImageGen 鐢熸垚锛屾彁绀洪噸鐐癸細寤剁画铚＄瑪椋庛€佸叡鐢ㄥ湥璇炴爲銆佺ぜ鐗╃暀瑷€琛ㄥ崟銆?/p>
+鎴戠幇鍦ㄥ彂鐜颁釜闂灏辨槸杩欎釜鎶辩潃绀肩墿鐨勪箤楦＄敾闈㈤€昏緫鏈夐棶棰橈紝浼樺寲鎴愮ぜ鐗╃洅瀛愮殑鐩栧瓙鍦ㄥ湴涓婅澊铦剁粨鐨勫僵甯︽瘯绔熸槸琚媶寮€浜嗗槢涓嶈铦磋澏缁撶殑鏍峰紡浣嗘槸鍙樻垚褰╁甫椋樿惤鍦ㄤ袱渚с€傜劧鍚庣浜屼釜杩欎釜閫変竴涓ぜ鐩掔殑涓変釜绀肩洅鐨勬牱寮忔垜浠渶瑕侀噸鏂拌璁★紝涓€涓渶瑕佸竷涓佺嫍鍏冪礌锛屼竴涓渶瑕佸垰鍒氶偅涓尓鐚殑椋庢牸锛屼竴涓渶瑕佸湥璇為鏍煎惂銆傜劧鍚庡浘涓€鐨勫湥璇炴爲涔熶笉澶熺湡灏辨槸鎷愭潠绯栬繕鏈夌伅鐞冨憖閭ｄ簺鍏冪礌閮藉畨鎺掍笂宸﹀彸鐨勬埧瀛愪笉瑕佷簡
+鎴戠幇鍦ㄥ彂鐜颁釜闂灏辨槸杩欎釜鎶辩潃绀肩墿鐨勪箤楦＄敾闈㈤€昏緫鏈夐棶棰橈紝浼樺寲鎴愮ぜ鐗╃洅瀛愮殑鐩栧瓙鍦ㄥ湴涓婅澊铦剁粨鐨勫僵甯︽瘯绔熸槸琚媶寮€浜嗗槢涓嶈铦磋澏缁撶殑鏍峰紡浣嗘槸鍙樻垚褰╁甫椋樿惤鍦ㄤ袱渚с€傜劧鍚庣浜屼釜杩欎釜閫変竴涓ぜ鐩掔殑涓変釜绀肩洅鐨勬牱寮忔垜浠渶瑕侀噸鏂拌璁★紝涓€涓渶瑕佸竷涓佺嫍鍏冪礌锛屼竴涓渶瑕佸垰鍒氶偅涓尓鐚殑椋庢牸锛屼竴涓渶瑕佸湥璇為鏍煎惂銆傜劧鍚庡浘涓€鐨勫湥璇炴爲涔熶笉澶熺湡灏辨槸鎷愭潠绯栬繕鏈夌伅鐞冨憖閭ｄ簺鍏冪礌閮藉畨鎺掍笂宸﹀彸鐨勬埧瀛愪笉瑕佷簡
+Worked for 10m 39s
+涓嶉敊涓嶉敊浣犳敼鐨勫緢妫掑憖浣嗘槸杩欎釜鐨勪篃璁板緱鏀逛笅绗簲涓摝
+Viewed an image
+绗簲涓悓姝ユ敼濂戒簡锛?strong class="font-semibold">绀肩洅鎵撳紑銆佺洅鐩栬惤鍦般€佸僵甯﹁В寮€鍨備笅
+锛屽竷涓佺嫍浠庣洅閲屾帰澶淬€?/p>
+涓嬭浇鏂扮増鍏姩浣滃浘
+浣跨敤 ImageGen 缂栬緫锛屾彁绀洪噸鐐癸細鍙慨姝ｇ浜斾釜鍔ㄤ綔鐨勬媶绀肩墿閫昏緫銆?/p>
+鎴戠幇鍦ㄥ幓璋冩暣涓€涓嬬劧鍚庝綘鍛婅瘔鎴戜笅涓€姝?/p>
+浣犲厛璋冩暣锛屾敼濂藉悗鎶婃渶缁堢増鍙戞潵锛屾垜浠互閭ｇ増涓哄噯銆?/p>
+涓嬩竴姝ュ仛鑳界偣鍑荤殑缃戦〉鍘熷瀷
+锛屾妸杩欎簺鍥句覆鎴愬畬鏁存祦绋嬶細
+濉啓鏄电О 鈫?10 閬撻 鈫?閫夋嫨绀肩洅銆佸啓绁濈 鈫?鎸備笂鍦ｈ癁鏍?鈫?鐐瑰嚮绀肩墿鐪嬬暀瑷€銆?/strong>
+鍏堣椤甸潰鍒囨崲鍜屼箤楦″姩浣滆窇璧锋潵锛屽啀鎺ュ叆淇濆瓨鍔熻兘锛岃鏈嬪弸浠湅鍒板悓涓€妫垫爲銆?/p>
+浣犺皟鏁寸殑鏃跺€欙紝鍙互椤轰究鏁寸悊
+10 閬撻锛嬫瘡棰橀€夐」
+锛涘鏋滈渶瑕佸垽瀵归敊锛屽啀鍔犱笂涔岄浮鐨勭瓟妗堛€傛殏鏃舵病鎯冲ソ涔熸病鍏崇郴锛屽師鍨嬪彲浠ュ厛鐢ㄧず渚嬮銆?/p>
+鐒跺悗閭ｄ釜缁欎箤楦＄殑涓€浠藉績鎰忕殑鐣岄潰鐨勯偅涓€寮犵尓鐚ぜ鐩掔殑鍙宠劯鏈夋薄娓嶄綘鍒犳帀涓嬬劧鍚庝笂杈圭殑閭ｄ釜鎸傜ぜ鐗╃殑涔岄浮鐨勫竷涓佺嫍鎵嬫湁鐐瑰嚭閿欎簡浣犳敼涓?/p>
+Worked for 4m 55s
+Viewed an image
+鏀瑰ソ浜嗭細鐚尓绀肩洅鍙宠劯鐨勬薄娓嶅凡鍘绘帀锛屼笂鏂瑰竷涓佺嫍鐨勪袱鍙皬鐖瓙涔熼噸鏂版暣鐞嗕簡銆?/p>
+涓嬭浇淇鐗堥〉闈?/span>
+浣跨敤 ImageGen 灞€閮ㄧ紪杈戯紝鎻愮ず閲嶇偣锛氭竻鐞嗙尓鐚彸鑴搞€佷慨姝ｅ竷涓佺嫍鎵嬭噦銆?/p>
+涓嬩竴姝ュ共鍢?/p>
+涓嬩竴姝ユ妸璁捐鍥惧仛鎴愯兘鐐瑰嚮鐨勭綉椤靛師鍨嬨€?/strong> 鐢婚宸茬粡瀹氫簡锛屽彲浠ュ紑濮嬫妸浣撻獙璺戦€氾細
+濉樀绉帮紝涔岄浮鎸ユ墜娆㈣繋銆?/li>
+鍥炵瓟 10 閬撻锛屼箤楦￠殢閫夋嫨鍒囨崲琛ㄦ儏銆?/li>
+閫夊竷涓佺嫍銆佺尓鐚垨鍦ｈ癁绀肩洅锛屽啓绀肩墿鍜岀绂忋€?/li>
+鎸備笂鍦ｈ癁鏍戯紝鐐瑰嚮绀肩墿鏌ョ湅鐣欒█銆?/li>
+鍏堢敤绀轰緥棰樺畬鎴愬師鍨嬶紝纭椤烘墜鍚庡啀鎹㈡垚姝ｅ紡棰樼洰锛屾帴鍏ュ浜哄叡鐢ㄧ殑淇濆瓨鍔熻兘銆?/p>
+浣犳帴涓嬫潵闇€瑕佸噯澶囩殑鏄細
+10 閬撻銆佹瘡棰橀€夐」锛屼互鍙婃槸鍚﹂噰鐢ㄤ箤楦￠鍏堥€夊ソ鐨勭瓟妗堟潵鍒ゆ柇榛樺銆?/strong> 娌″噯澶囧ソ涔熶笉褰卞搷鍏堝仛鍘熷瀷銆?/p>
+浣犲氨鎸変箣鍓嶉偅涓綉椤电殑鍗侀亾棰樻潵鍋?鐒跺悗鐜嬬埛鐨勫垽鏂爣鍑嗘槸涔岄浮搴旇瑕佸厛鍋氫竴娆″崄涓瓟妗堢殑瀵归敊
+Worked
+Worked for 3h 25m 2s
+鎴戜竴浼氬洖瀹跺啀鎼?/p>
+濂斤紝鍥炲鍐嶇户缁€傝璁″浘銆?0 閬撻鍜屽師鍨嬩唬鐮侀兘宸蹭繚瀛樸€?/p>
+鐩墠宸插啓濂姐€屼箤楦″厛璁剧瓟妗?鈫?鏈嬪弸绛旈 鈫?鍐欑绂忔寕绀肩墿銆嶆祦绋嬶紝缃戦〉棰勮杩樻病楠岃瘉閫氳繃銆傚洖鏉ュ悗浠庢鏌ュ師鍨嬬户缁紝涓嶇敤閲嶆潵銆?/p>
+Edited 3 files
++48
+-0
+work/wuji-site/dist/app.js
++45
+-0
+work/wuji-site/dist/index.html
++2
+-0
+work/wuji-site/dist/style.css
++1
+-0
+缁х画鍚?/p>
+Worked for 4m 39s
+鍘熷瀷缁х画瀹屾垚浜嗭細涔岄浮鍏堝洖绛?10 閬撻淇濆瓨绛旀锛屾湅鍙嬪啀绛斿悓涓€濂楅绠楅粯濂戝垎锛屼箣鍚庨€夊竷涓佺嫍锛忕尓鐚紡鍦ｈ癁绀肩洅銆佸啓绁濈骞舵寕涓婃爲銆?/p>
+涓嬭浇鍙偣鍑诲師鍨嬫簮鐮?/span>
+鎴戝凡妫€鏌ヨ剼鏈娉曞拰绱犳潗瀹屾暣鎬с€傚綋鍓嶇増鏈殑鏁版嵁鍙繚瀛樺湪璁块棶鑰呰嚜宸辩殑娴忚鍣紝鎵€浠ヤ笉鍚屾湅鍙嬫殏鏃剁湅涓嶅埌鍚屼竴妫垫爲锛涗笅涓€姝ユ帴鍏ュ叡浜暟鎹悗鎵嶈兘鐪熸澶氫汉鍏辩敤銆傚綋鍓嶇幆澧冪殑鏈湴绔彛鏃犳硶渚涙祻瑙堝櫒璁块棶锛屼笖 Sites 鍙戝竷杩炴帴杩欒疆涓嶅彲鐢紝鍥犳杩樻病鏈夊彲鍒嗕韩閾炬帴銆?/p>

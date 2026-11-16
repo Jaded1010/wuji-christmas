@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>乌鸡的圣诞 🎄</title>
+<meta name="description" content="10 道关于乌鸡的题,答完把想送她的礼物挂在圣诞树上 🎁">
+<meta name="theme-color" content="#223564">
+<meta property="og:title" content="乌鸡想知道圣诞节你会送她什么 🎁">
+<meta property="og:description" content="10 道关于乌鸡的题,答完把礼物挂上圣诞树 ✨">
+<meta property="og:image" content="assets/wuji.png">
+<link rel="icon" href="assets/wuji.png">
+<link rel="apple-touch-icon" href="assets/wuji.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<canvas id="snow" aria-hidden="true"></canvas>
+
+<div id="app">
+  <header class="topbar">
+    <button id="back" class="icon-btn" aria-label="返回" style="visibility:hidden">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 5l-7 7 7 7"/></svg>
+    </button>
+    <span class="topbar-sep"></span>
+    <h1 id="title">乌鸡的圣诞</h1>
+    <button id="sound" class="icon-btn" aria-label="声音开关">
+      <svg class="ico-on" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.5 8.5a5 5 0 010 7M19 6a8.5 8.5 0 010 12" fill="none"/></svg>
+      <svg class="ico-off" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M17 9l5 6M22 9l-5 6" fill="none"/></svg>
+    </button>
+  </header>
+
+  <main>
+    <!-- ① 首页 -->
+    <section id="s-home" class="screen active">
+      <div class="home-head">
+        <p class="kicker">✦ 圣诞节快到啦 ✦</p>
+        <h2 class="big-title">乌鸡想知道<br><em>你会送她什么?</em></h2>
+        <p class="sub">10 道关于乌鸡的题,答完就能把礼物挂上圣诞树</p>
+      </div>
+      <div class="scene scene-home">
+        <div class="speech speech-top">猜猜我喜欢什么~</div>
+        <img class="hero-wuji float" src="assets/wuji-wave.png" alt="戴着圣诞帽的乌鸡抱着小白">
+        <div class="snow-mound" aria-hidden="true"></div>
+      </div>
+      <form id="name-form" class="card" autocomplete="off">
+        <label for="name-input" class="label">你的名字</label>
+        <input id="name-input" class="field" type="text" maxlength="15" placeholder="让乌鸡知道你是谁" required>
+        <button class="btn" type="submit">开始答题</button>
+        <p class="note">答得对不对都能送礼物,放心玩 🎁</p>
+      </form>
+      <div class="home-links">
+        <button id="skip-to-tree" class="link-btn" type="button">直接去看圣诞树 🎄</button>
+        <button id="btn-set-answers" class="link-btn link-btn-gold" type="button">👑 乌鸡本鸡点这里：录入我的真实答案</button>
+      </div>
+    </section>
+
+    <!-- ② 答题 -->
+    <section id="s-quiz" class="screen">
+      <div id="q-mode-tip" class="mode-tip" hidden>👑 乌鸡专属 · 正在录入你的真实答案</div>
+      <div class="progress"><div id="q-bar"></div></div>
+      <p id="q-num" class="q-num"></p>
+      <div class="qhead">
+        <img id="q-wuji" class="q-wuji" src="assets/wuji-think.png" alt="">
+        <div class="bubble"><p id="q-text"></p></div>
+      </div>
+      <div id="q-options" class="options"></div>
+      <p id="q-fun" class="q-fun" hidden></p>
+      <button id="q-next" class="btn" hidden>下一题</button>
+    </section>
+
+    <!-- ③ 结果 -->
+    <section id="s-result" class="screen">
+      <div class="scene scene-result">
+        <img id="r-wuji" class="hero-wuji float" src="assets/wuji-happy.png" alt="">
+        <div class="snow-mound" aria-hidden="true"></div>
+      </div>
+      <div class="card result-card">
+        <p class="kicker">你答对了</p>
+        <p class="score"><span id="r-score">0</span><small> / 10</small></p>
+        <h2 id="r-title" class="r-title"></h2>
+        <p id="r-text" class="r-text"></p>
+        <button id="r-tree" class="btn">去圣诞树挂礼物 🎄</button>
+        <button id="r-again" class="btn btn-ghost">再答一次</button>
+      </div>
+    </section>
+
+    <!-- ④ 圣诞树 -->
+    <section id="s-tree" class="screen">
+      <div class="tree-head">
+        <h2 class="big-title big-title-red">把心意,挂在这里</h2>
+        <p class="sub sub-line"><span>每一份礼物,都是朋友的惦记</span></p>
+      </div>
+      <div id="stage" class="stage">
+        <img class="stage-bg" src="assets/tree.jpg" alt="圣诞树">
+        <div id="gifts" class="gifts"></div>
+        <img class="stage-wuji" src="assets/wuji-unbox.png" alt="乌鸡正在拆礼物">
+      </div>
+      <p id="count" class="count"></p>
+      <button id="open-form" class="btn">挂上我的礼物</button>
+      <p class="note note-line"><span>点一下树上的礼物,看看朋友的留言</span></p>
+    </section>
+  </main>
+</div>
+
+<!-- 挂礼物表单 -->
+<div id="modal-form" class="modal" hidden>
+  <div class="modal-bg" data-close></div>
+  <form class="sheet" id="gift-form" autocomplete="off">
+    <div class="scene scene-mini">
+      <div class="speech speech-mini">这份心意,<br>我收好啦!</div>
+      <img class="mini-wuji" src="assets/wuji-hang.png" alt="">
+      <div class="snow-mound" aria-hidden="true"></div>
+    </div>
+    <button type="button" class="sheet-close icon-btn" data-close aria-label="关闭">✕</button>
+    <label class="label" for="f-gift">你想送什么?</label>
+    <input id="f-gift" class="field" maxlength="30" placeholder="例如:一起去看一场演唱会" required>
+    <div id="f-ideas" class="chips"></div>
+    <label class="label" for="f-msg">写给乌鸡的话</label>
+    <textarea id="f-msg" class="field" rows="3" maxlength="120" placeholder="圣诞快乐!希望明年也能一起吃饭、聊天,做很多开心的事。"></textarea>
+    <p class="label">选一个礼盒</p>
+    <div id="f-boxes" class="boxes" role="radiogroup"></div>
+    <label class="label" for="f-from">来自</label>
+    <input id="f-from" class="field" maxlength="15" placeholder="你的名字" required>
+    <button class="btn" type="submit" id="f-submit">把礼物挂上树</button>
+    <p class="note note-line"><span>礼物和祝福会留在这棵树上</span></p>
+  </form>
+</div>
+
+<!-- 查看礼物 -->
+<div id="modal-view" class="modal" hidden>
+  <div class="modal-bg" data-close></div>
+  <div class="sheet sheet-center" id="view-card">
+    <button type="button" class="sheet-close icon-btn" data-close aria-label="关闭">✕</button>
+    <div id="view-body"></div>
+  </div>
+</div>
+
+<div id="toast" class="toast" hidden></div>
+
+<script src="js/config.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

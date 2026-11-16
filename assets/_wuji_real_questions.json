@@ -1,0 +1,195 @@
+{
+  "success": true,
+  "quiz": {
+    "id": "CY1lPlK",
+    "name": "乌鸡",
+    "gender": "female",
+    "mood": "surprise",
+    "language": "cn"
+  },
+  "questions": [
+    {
+      "id": "3005",
+      "question": "userName 会选哪个？💳",
+      "options": [
+        {
+          "index": 1,
+          "text": "专门为我挑的礼物 🎁",
+          "correct": true
+        },
+        {
+          "index": 0,
+          "text": "礼品卡，我自己挑 💳",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "3008",
+      "question": "userName 的梦想礼物是…… 🧳",
+      "options": [
+        {
+          "index": 0,
+          "text": "一场旅行 🧳",
+          "correct": true
+        },
+        {
+          "index": 1,
+          "text": "最新款数码产品 📱",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "3003",
+      "question": "圣诞节收到袜子：userName 怎么评价？🧦",
+      "options": [
+        {
+          "index": 0,
+          "text": "好暖！超喜欢 🥰",
+          "correct": true
+        },
+        {
+          "index": 1,
+          "text": "史上最烂礼物 🙄",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "4025",
+      "question": "userName最爱的蛋糕或冰淇淋口味 🎂",
+      "options": [
+        {
+          "index": 0,
+          "text": "巧克力 🍫",
+          "correct": true
+        },
+        {
+          "index": 2,
+          "text": "草莓 🍓",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "4030",
+      "question": "userName坚决不吃什么？🙅",
+      "options": [
+        {
+          "index": 2,
+          "text": "番茄 🍅",
+          "correct": false
+        },
+        {
+          "index": 1,
+          "text": "洋葱 🧅",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "3002",
+      "question": "哪种礼物最能打动 userName？🍫",
+      "options": [
+        {
+          "index": 1,
+          "text": "能永远留着的东西 💝",
+          "correct": true
+        },
+        {
+          "index": 0,
+          "text": "巧克力，永远不腻 🍫",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "4008",
+      "question": "userName洗澡时会唱歌吗？🚿",
+      "options": [
+        {
+          "index": 0,
+          "text": "每次都唱 🎤",
+          "correct": true
+        },
+        {
+          "index": 1,
+          "text": "从来不唱 🤐",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "4004",
+      "question": "沙发上的userName 🛋️",
+      "options": [
+        {
+          "index": 0,
+          "text": "坐得笔直 🧘",
+          "correct": false
+        },
+        {
+          "index": 1,
+          "text": "慢慢滑下去 🫠",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "3006",
+      "question": "userName 怎么拆礼物？🎀",
+      "options": [
+        {
+          "index": 0,
+          "text": "一秒撕开 💥",
+          "correct": false
+        },
+        {
+          "index": 1,
+          "text": "慢慢拆，包装纸留着 🎀",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "4043",
+      "question": "遇到新朋友，userName…👋",
+      "options": [
+        {
+          "index": 1,
+          "text": "热闹搞笑 😆",
+          "correct": true
+        },
+        {
+          "index": 0,
+          "text": "害羞安静 😳",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "tree": {
+    "count": 4,
+    "top": "小白",
+    "others": [
+      {
+        "name": "嘻嘻嘻",
+        "score": 10
+      },
+      {
+        "name": "小白",
+        "score": 10
+      },
+      {
+        "name": "大",
+        "score": 9
+      },
+      {
+        "name": "猪猪",
+        "score": 8
+      }
+    ]
+  },
+  "csrf": "5jHyOCjyR5NqWHZBmsPX6gsNOPSaEzm6IyIqpsR5"
+}

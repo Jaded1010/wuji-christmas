@@ -1,0 +1,1 @@
+Object.assign(window.XM_CONFIG,{"languages":{"en":"English","es":"Español","fr":"Français","ms":"Bahasa Melayu","th":"ไทย","pt":"Português","ar":"العربية","id":"Bahasa Indonesia","fil":"Filipino","ko":"한국어","de":"Deutsch","vn":"Tiếng Việt","hi":"हिंदी","bn":"বাংলা","ta":"தமிழ்","pa":"ਪੰਜਾਬੀ","nl":"N

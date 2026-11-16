@@ -1,0 +1,12 @@
+{
+  "name": "wuji-christmas",
+  "version": "1.0.0",
+  "description": "乌鸡的圣诞 🎄 答题互动与圣诞树挂心意礼物",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
